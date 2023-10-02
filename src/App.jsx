@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./componets/Header";
 import Main from "./componets/Main";
 import Footer from "./componets/Footer";
+import WordBank from "./componets/WordBank";
 
 function App() {
   return (
@@ -9,7 +10,6 @@ function App() {
       <Header />
       <Main />
       <Footer />
-      <p>Hello</p>
     </div>
   );
 }
