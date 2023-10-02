@@ -1,9 +1,9 @@
 import React from "react";
 
-const Footer = () => {
+const Main = () => {
   return (
     <header>
-      <h1>Foooot</h1>
+      <h1>maaain</h1>
       <nav>
         <ul>
           <li>
@@ -21,4 +21,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Main;
