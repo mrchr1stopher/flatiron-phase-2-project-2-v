@@ -18,7 +18,7 @@ function App() {
           <Header />
         </Route>
         <Route exact path="/">
-          <Footer />
+          <Main />
         </Route>
       </Switch>
     </div>
