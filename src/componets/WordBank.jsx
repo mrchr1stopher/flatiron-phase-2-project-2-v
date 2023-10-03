@@ -1,20 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 const WordBank = () => {
-  const [word, setWord] = useState(null);
-  const [wordId, setCurrentId] = useState(2);
+  const [word, setWord] = useState();
+  const [wordId, setCurrentId] = useState(1);
 
   useEffect(() => {
     fetch(`http://localhost:3000/words/${wordId}`)
-      .then((response) => {
-        if (!response.ok) {
-          console.error("Fetch request failed with status:", response.status);
-        } else {
-          return response.json().then((data) => {
-            setWord(data);
-            console.log("Data fetched successfully:", data);
-          });
-        }
+      .then((response) => response.json())
+      .then((data) => {
+        setWord(data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -33,6 +27,10 @@ const WordBank = () => {
             style={{ maxWidth: "300px", maxHeight: "300px" }}
           />
           <p>Spanish: {word.spanish}</p>
+          <button onClick={() => setCurrentId(wordId - 1)}>
+            Previous Word
+          </button>
+          <button onClick={() => setCurrentId(wordId + 1)}>Next Word</button>
         </div>
       )}
     </div>
