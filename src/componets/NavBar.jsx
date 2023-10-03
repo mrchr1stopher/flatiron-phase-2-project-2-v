@@ -34,7 +34,19 @@ function NavBar() {
           color: "red",
         }}
       >
-        Wordlist
+        Word Bank
+      </NavLink>
+
+      <NavLink
+        to="/"
+        exact
+        style={linkStyles}
+        activeStyle={{
+          background: "black",
+          color: "red",
+        }}
+      >
+        Footer
       </NavLink>
     </div>
   );

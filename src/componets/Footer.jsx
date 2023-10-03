@@ -12,9 +12,6 @@ const Footer = () => {
           <li>
             <a href="#some-id">Some Link 2</a>
           </li>
-          <li>
-            <a href="#some-id">Some Link 3</a>
-          </li>
         </ul>
       </nav>
     </header>

@@ -17,6 +17,9 @@ function App() {
         <Route exact path="/header">
           <Header />
         </Route>
+        <Route exact path="/">
+          <Footer />
+        </Route>
       </Switch>
     </div>
   );
