@@ -14,39 +14,27 @@ function NavBar() {
   return (
     <div>
       <NavLink
-        to="/header"
-        exact
-        style={linkStyles}
-        activeStyle={{
-          background: "black",
-          color: "red",
-        }}
-      >
-        head
-      </NavLink>
-
-      <NavLink
         to="/wordbank"
         exact
         style={linkStyles}
         activeStyle={{
           background: "black",
-          color: "red",
+          color: "gold",
         }}
       >
         Word Bank
       </NavLink>
 
       <NavLink
-        to="/"
+        to="/header"
         exact
         style={linkStyles}
         activeStyle={{
           background: "black",
-          color: "red",
+          color: "gold",
         }}
       >
-        Footer
+        Add a new word
       </NavLink>
     </div>
   );

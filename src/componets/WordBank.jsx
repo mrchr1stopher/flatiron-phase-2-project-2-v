@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const WordBank = () => {
   const [word, setWord] = useState(null);
-  const [wordId, setCurrentId] = useState(1);
+  const [wordId, setCurrentId] = useState(2);
 
   useEffect(() => {
     fetch(`http://localhost:3000/words/${wordId}`)
@@ -27,6 +27,11 @@ const WordBank = () => {
       {word && (
         <div>
           <p>English: {word.english}</p>
+          <img
+            src={word.image}
+            alt={`${word.english}`}
+            style={{ maxWidth: "300px", maxHeight: "300px" }}
+          />
           <p>Spanish: {word.spanish}</p>
         </div>
       )}
