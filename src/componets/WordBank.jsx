@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from "react";
 
 const WordBank = () => {
-  const [words, setWords] = useState([]);
-
   useEffect(() => {
     fetch("http://localhost:3000/words")
-      .then((response) => response.json())
-      .then((data) => setWords(data.words))
-      .catch((error) => console.error("Error fetching data:", error));
+      .then((response) => {
+        if (!response.ok) {
+          console.error("Fetch request failed with status:", response.status);
+        } else {
+          return response.json().then((data) => {
+            console.log("Data fetched successfully:", data);
+          });
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
   }, []);
 
   return (
