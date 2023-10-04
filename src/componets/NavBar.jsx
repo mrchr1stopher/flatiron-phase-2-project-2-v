@@ -26,7 +26,7 @@ function NavBar() {
       </NavLink>
 
       <NavLink
-        to="/header"
+        to="/addword"
         exact
         style={linkStyles}
         activeStyle={{
@@ -34,7 +34,7 @@ function NavBar() {
           color: "gold",
         }}
       >
-        Add a new word
+        Add a word
       </NavLink>
     </div>
   );

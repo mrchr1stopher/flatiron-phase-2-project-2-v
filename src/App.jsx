@@ -5,6 +5,7 @@ import Footer from "./componets/Footer";
 import WordBank from "./componets/WordBank";
 import NavBar from "./componets/NavBar";
 import { Route, Switch } from "react-router-dom";
+import AddWord from "./componets/AddWord";
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
         </Route>
         <Route exact path="/header">
           <Header />
+        </Route>
+        <Route exact path="/addword">
+          <AddWord />
         </Route>
         <Route exact path="/">
           <Main />
