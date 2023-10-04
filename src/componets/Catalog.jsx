@@ -26,7 +26,6 @@ const Catalog = () => {
         }
         let dataCatalogItems = await responseCatalogItems.json();
 
-        // Filter catalog
         if (selectedCategory !== "All") {
           dataCatalogItems = dataCatalogItems.filter(
             (item) => item.category === selectedCategory
@@ -86,15 +85,17 @@ const Catalog = () => {
         <option value="All">All</option>
         <option value="Animals">Animals</option>
         <option value="Clothing">Clothing</option>
-        <option value="Miscellaneous">Miscellaneous</option>
         <option value="Food">Food</option>
+        <option value="Miscellaneous">Miscellaneous</option>
       </select>
       <div className="catalog-container">
         {catalogItems.length > 0 && (
           <div className="catalog-items">
             {catalogItems.map((item) => (
               <div key={item.id} className="catalog-item">
-                <p>English: {item.english}</p>
+                <p>
+                  English: {item.english} <br></br>Spanish: {item.spanish}
+                </p>
                 <div className="image-container">
                   <img
                     src={item.image}
@@ -102,7 +103,6 @@ const Catalog = () => {
                     className="catalog-image"
                   />
                 </div>
-                <p>Spanish: {item.spanish}</p>
                 <button onClick={() => handleDeleteCatalogItem(item.id)}>
                   Delete
                 </button>

@@ -5,6 +5,7 @@ const AddWord = () => {
     english: "",
     spanish: "",
     image: "",
+    category: "",
   });
 
   const handleInputChange = (e) => {
@@ -13,6 +14,16 @@ const AddWord = () => {
   };
 
   const handleAddWord = () => {
+    if (
+      !newWord.english ||
+      !newWord.spanish ||
+      !newWord.image ||
+      !newWord.category
+    ) {
+      alert("Please fill out all fields.");
+      return;
+    }
+
     fetch("http://localhost:3000/words", {
       method: "POST",
       headers: {
@@ -22,7 +33,7 @@ const AddWord = () => {
     })
       .then((response) => response.json())
       .then(() => {
-        setNewWord({ english: "", spanish: "", image: "" });
+        setNewWord({ english: "", spanish: "", image: "", category: "" });
       })
       .catch((error) => {
         console.error("Fetch error:", error);
@@ -35,6 +46,22 @@ const AddWord = () => {
       <p>Please Ensure you fill out all forms</p>
       <form>
         <div>
+          <label htmlFor="category">Category:</label>
+          <select
+            id="category"
+            name="category"
+            value={newWord.category}
+            onChange={handleInputChange}
+          >
+            <option value="">Select a category</option>
+            <option value="Animals">Animals</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Food">Food</option>
+            <option value="Miscellaneous">Miscellaneous</option>
+          </select>
+        </div>
+        <br></br>
+        <div>
           <label htmlFor="english">English:</label>
           <input
             type="text"
@@ -44,6 +71,7 @@ const AddWord = () => {
             onChange={handleInputChange}
           />
         </div>
+        <br></br>
         <div>
           <label htmlFor="spanish">Spanish:</label>
           <input
@@ -54,6 +82,7 @@ const AddWord = () => {
             onChange={handleInputChange}
           />
         </div>
+        <br></br>
         <div>
           <label htmlFor="image">Image URL:</label>
           <input
@@ -64,6 +93,7 @@ const AddWord = () => {
             onChange={handleInputChange}
           />
         </div>
+        <br></br>
         <button type="button" onClick={handleAddWord}>
           Add Word
         </button>
