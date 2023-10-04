@@ -14,7 +14,7 @@ function NavBar() {
   return (
     <div>
       <NavLink
-        to="/wordbank"
+        to="/catalog"
         exact
         style={linkStyles}
         activeStyle={{
@@ -22,7 +22,7 @@ function NavBar() {
           color: "gold",
         }}
       >
-        Word Bank
+        Catalog
       </NavLink>
 
       <NavLink

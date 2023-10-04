@@ -1,8 +1,7 @@
 import React from "react";
 import Header from "./componets/Header";
 import Main from "./componets/Main";
-import Footer from "./componets/Footer";
-import WordBank from "./componets/WordBank";
+import Catalog from "./componets/Catalog";
 import NavBar from "./componets/NavBar";
 import { Route, Switch } from "react-router-dom";
 import AddWord from "./componets/AddWord";
@@ -12,8 +11,8 @@ function App() {
     <div>
       <NavBar />
       <Switch>
-        <Route exact path="/wordbank">
-          <WordBank />
+        <Route exact path="/catalog">
+          <Catalog />
         </Route>
         <Route exact path="/header">
           <Header />
@@ -21,7 +20,6 @@ function App() {
         <Route exact path="/addword">
           <AddWord />
         </Route>
-
         <Route exact path="/">
           <Main />
         </Route>
