@@ -89,28 +89,32 @@ const Catalog = () => {
         <option value="Miscellaneous">Miscellaneous</option>
         <option value="Food">Food</option>
       </select>
-      {catalogItems.length > 0 && (
-        <div>
-          {catalogItems.map((item) => (
-            <div key={item.id} className="catalog-item">
-              <p>English: {item.english}</p>
-              <div className="image-container">
-                <img
-                  src={item.image}
-                  alt={`${item.english}`}
-                  className="catalog-image"
-                />
+      <div className="catalog-container">
+        {catalogItems.length > 0 && (
+          <div className="catalog-items">
+            {catalogItems.map((item) => (
+              <div key={item.id} className="catalog-item">
+                <p>English: {item.english}</p>
+                <div className="image-container">
+                  <img
+                    src={item.image}
+                    alt={`${item.english}`}
+                    className="catalog-image"
+                  />
+                </div>
+                <p>Spanish: {item.spanish}</p>
+                <button onClick={() => handleDeleteCatalogItem(item.id)}>
+                  Delete
+                </button>
               </div>
-              <p>Spanish: {item.spanish}</p>
-              <button onClick={() => handleDeleteCatalogItem(item.id)}>
-                Delete
-              </button>
-            </div>
-          ))}
+            ))}
+          </div>
+        )}
+        <div className="catalogbuttons">
           <button onClick={handlePreviousCatalogItems}>Previous Items</button>
           <button onClick={handleNextCatalogItems}>Next Items</button>
         </div>
-      )}
+      </div>
     </div>
   );
 };
