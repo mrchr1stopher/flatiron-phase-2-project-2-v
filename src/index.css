@@ -4,3 +4,20 @@
   align-items: center;
   min-height: 100vh;
 }
+
+.catalog-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.image-container {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.catalog-image {
+  max-width: 200px;
+  max-height: 200px;
+}

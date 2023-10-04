@@ -92,14 +92,15 @@ const Catalog = () => {
       {catalogItems.length > 0 && (
         <div>
           {catalogItems.map((item) => (
-            <div key={item.id}>
+            <div key={item.id} className="catalog-item">
               <p>English: {item.english}</p>
-              <p>Category: {item.category}</p>
-              <img
-                src={item.image}
-                alt={`${item.english}`}
-                style={{ maxWidth: "300px", maxHeight: "300px" }}
-              />
+              <div className="image-container">
+                <img
+                  src={item.image}
+                  alt={`${item.english}`}
+                  className="catalog-image"
+                />
+              </div>
               <p>Spanish: {item.spanish}</p>
               <button onClick={() => handleDeleteCatalogItem(item.id)}>
                 Delete
