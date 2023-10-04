@@ -17,9 +17,9 @@ const Catalog = () => {
         const maxIndex = data.length - 1;
         setMaxIndex(maxIndex);
 
-        // Fetch 1000 Items
+        // Fetch Items
         const responseCatalogItems = await fetch(
-          `http://localhost:3000/words?_start=${catalogIndex}&_limit=1000`
+          `http://localhost:3000/words?_start=${catalogIndex}&_limit=10`
         );
         if (!responseCatalogItems.ok) {
           throw new Error("Network response was not ok");
@@ -42,15 +42,15 @@ const Catalog = () => {
   }, [catalogIndex, selectedCategory]);
 
   const handleNextCatalogItems = () => {
-    if (catalogIndex + 1000 <= maxIndex) {
-      setCatalogIndex((prevIndex) => prevIndex + 1000);
+    if (catalogIndex + 10 <= maxIndex) {
+      setCatalogIndex((prevIndex) => prevIndex + 10);
     }
   };
 
   // Back Button
   const handlePreviousCatalogItems = () => {
-    if (catalogIndex >= 1000) {
-      setCatalogIndex((prevIndex) => prevIndex - 1000);
+    if (catalogIndex >= 10) {
+      setCatalogIndex((prevIndex) => prevIndex - 10);
     }
   };
 
@@ -111,8 +111,8 @@ const Catalog = () => {
           </div>
         )}
         <div className="catalogbuttons">
-          <button onClick={handlePreviousCatalogItems}>Previous Items</button>
-          <button onClick={handleNextCatalogItems}>Next Items</button>
+          <button onClick={handlePreviousCatalogItems}>Previous</button>
+          <button onClick={handleNextCatalogItems}>Next</button>
         </div>
       </div>
     </div>
