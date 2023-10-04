@@ -5,6 +5,7 @@ import Catalog from "./componets/Catalog";
 import NavBar from "./componets/NavBar";
 import { Route, Switch } from "react-router-dom";
 import AddWord from "./componets/AddWord";
+import Quiz from "./componets/Quiz";
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
         </Route>
         <Route exact path="/header">
           <Header />
+          <Route exact path="/quiz">
+            <Quiz />
+          </Route>
         </Route>
         <Route exact path="/addword">
           <AddWord />

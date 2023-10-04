@@ -26,6 +26,18 @@ function NavBar() {
       </NavLink>
 
       <NavLink
+        to="/quiz"
+        exact
+        style={linkStyles}
+        activeStyle={{
+          background: "black",
+          color: "gold",
+        }}
+      >
+        Quiz
+      </NavLink>
+
+      <NavLink
         to="/addword"
         exact
         style={linkStyles}
