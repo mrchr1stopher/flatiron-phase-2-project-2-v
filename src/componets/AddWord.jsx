@@ -32,6 +32,7 @@ const AddWord = () => {
   return (
     <div>
       <h2>New Word</h2>
+      <p>Please Ensure you fill out all forms</p>
       <form>
         <div>
           <label htmlFor="english">English:</label>

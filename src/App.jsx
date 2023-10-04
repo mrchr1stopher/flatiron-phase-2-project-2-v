@@ -21,6 +21,7 @@ function App() {
         <Route exact path="/addword">
           <AddWord />
         </Route>
+
         <Route exact path="/">
           <Main />
         </Route>

@@ -8,7 +8,11 @@ const WordBank = () => {
     fetch(`http://localhost:3000/words/${wordId}`)
       .then((response) => response.json())
       .then((data) => {
-        setWord(data);
+        if (!data || !data.image) {
+          setCurrentId(wordId - 1);
+        } else {
+          setWord(data);
+        }
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
