@@ -34,6 +34,15 @@ const Quiz = () => {
       <h1>English to Spanish Quiz</h1>
       <div>
         <p>Translate the English word to Spanish:</p>
+        {word && (
+          <div className="image-container">
+            <img
+              src={word.image}
+              alt={word.english}
+              className="catalog-image"
+            />
+          </div>
+        )}
         {word && <p>{word.english}</p>}
         <input
           type="text"
