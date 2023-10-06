@@ -15,11 +15,13 @@ function App() {
         <Route exact path="/catalog">
           <Catalog />
         </Route>
+
+        <Route exact path="/quiz">
+          <Quiz />
+        </Route>
+
         <Route exact path="/header">
           <Header />
-          <Route exact path="/quiz">
-            <Quiz />
-          </Route>
         </Route>
         <Route exact path="/addword">
           <AddWord />
