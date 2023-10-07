@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "./componets/Header";
 import Main from "./componets/Main";
 import Catalog from "./componets/Catalog";
 import NavBar from "./componets/NavBar";
@@ -15,13 +14,8 @@ function App() {
         <Route exact path="/catalog">
           <Catalog />
         </Route>
-
         <Route exact path="/quiz">
           <Quiz />
-        </Route>
-
-        <Route exact path="/header">
-          <Header />
         </Route>
         <Route exact path="/addword">
           <AddWord />

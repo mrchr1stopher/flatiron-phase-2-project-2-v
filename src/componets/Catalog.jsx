@@ -19,7 +19,7 @@ const Catalog = () => {
 
         // Fetch Items
         const responseCatalogItems = await fetch(
-          `http://localhost:3000/words?_start=${catalogIndex}&_limit=10`
+          `http://localhost:3000/words?_start=${catalogIndex}&_limit=1000`
         );
         if (!responseCatalogItems.ok) {
           throw new Error("Network response was not ok");
