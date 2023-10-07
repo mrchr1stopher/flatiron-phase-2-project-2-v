@@ -33,15 +33,6 @@ const Quiz = () => {
 
     if (userAnswer.toLowerCase() === word?.spanish.toLowerCase()) {
       setScore((prevScore) => prevScore + 1);
-      setComboCount((prevComboCount) => prevComboCount + 1);
-    } else {
-      setComboCount(0);
-    }
-  };
-
-  const handleInputKeyPress = (e) => {
-    if (e.key === "Enter") {
-      checkAnswer();
     }
   };
 
