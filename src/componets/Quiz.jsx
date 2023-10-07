@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import ComboCounter from "./ComboCounter";
 
 const Quiz = () => {
   const [word, setWord] = useState();
   const [userAnswer, setUserAnswer] = useState("");
   const [showAnswer, setShowAnswer] = useState(false);
   const [score, setScore] = useState(0);
+  const [comboCount, setComboCount] = useState(0);
 
   const fetchRandomWord = async () => {
     try {
@@ -28,8 +30,18 @@ const Quiz = () => {
 
   const checkAnswer = () => {
     setShowAnswer(true);
+
     if (userAnswer.toLowerCase() === word?.spanish.toLowerCase()) {
       setScore((prevScore) => prevScore + 1);
+      setComboCount((prevComboCount) => prevComboCount + 1);
+    } else {
+      setComboCount(0);
+    }
+  };
+
+  const handleInputKeyPress = (e) => {
+    if (e.key === "Enter") {
+      checkAnswer();
     }
   };
 
@@ -46,6 +58,9 @@ const Quiz = () => {
       <div>
         <p>Translate the English word to Spanish:</p>
         <p>Score: {score}</p>
+
+        <ComboCounter comboCount={comboCount} />
+
         {word && (
           <div className="image-container">
             <img
@@ -62,6 +77,7 @@ const Quiz = () => {
           placeholder="Your answer"
           value={userAnswer}
           onChange={(e) => setUserAnswer(e.target.value)}
+          onKeyPress={handleInputKeyPress}
         />
         <button onClick={checkAnswer}>Check Answer</button>
         {showAnswer && <p>Correct Answer: {word.spanish}</p>}
