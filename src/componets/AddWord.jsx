@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import SpecialCharacters from "./SpanishCharacters";
 const AddWord = () => {
   const [newWord, setNewWord] = useState({
     english: "",
@@ -98,6 +98,7 @@ const AddWord = () => {
           Add Word
         </button>
       </form>
+      <SpecialCharacters />
     </div>
   );
 };

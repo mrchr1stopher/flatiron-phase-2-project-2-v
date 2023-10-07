@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ComboCounter from "./ComboCounter";
+import SpecialCharacters from "./SpanishCharacters";
 
 const Quiz = () => {
   const [word, setWord] = useState();
@@ -54,7 +55,6 @@ const Quiz = () => {
   return (
     <div>
       <h1>English to Spanish Quiz</h1>
-
       <div>
         <p>Translate the English word to Spanish:</p>
         <p>Score: {score}</p>
@@ -80,6 +80,7 @@ const Quiz = () => {
           onKeyPress={handleInputKeyPress}
         />
         <button onClick={checkAnswer}>Check Answer</button>
+        <SpecialCharacters />
         {showAnswer && <p>Correct Answer: {word.spanish}</p>}
         {showAnswer && (
           <div>
