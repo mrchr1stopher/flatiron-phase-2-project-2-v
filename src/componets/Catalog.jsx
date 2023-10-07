@@ -19,7 +19,7 @@ const Catalog = () => {
 
         // Fetch Items
         const responseCatalogItems = await fetch(
-          `http://localhost:3000/words?_start=${catalogIndex}&_limit=10`
+          `http://localhost:3000/words?_start=${catalogIndex}&_limit=1000`
         );
         if (!responseCatalogItems.ok) {
           throw new Error("Network response was not ok");
@@ -42,15 +42,15 @@ const Catalog = () => {
   }, [catalogIndex, selectedCategory]);
 
   const handleNextCatalogItems = () => {
-    if (catalogIndex + 10 <= maxIndex) {
-      setCatalogIndex((prevIndex) => prevIndex + 10);
+    if (catalogIndex + 5 <= maxIndex) {
+      setCatalogIndex((prevIndex) => prevIndex + 5);
     }
   };
 
   // Back Button
   const handlePreviousCatalogItems = () => {
-    if (catalogIndex >= 10) {
-      setCatalogIndex((prevIndex) => prevIndex - 10);
+    if (catalogIndex >= 5) {
+      setCatalogIndex((prevIndex) => prevIndex - 5);
     }
   };
 
