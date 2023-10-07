@@ -1,4 +1,4 @@
-# Quiz Application
+# Spanish Quiz Application
 
 This is a simple quiz application built with [React] that tests your knowledge of English-to-Spanish translations. Try to answer as 10 in a row to reach PERFECTO!
 
