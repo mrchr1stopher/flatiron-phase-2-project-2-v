@@ -1,0 +1,18 @@
+.combocountertext {
+  transition: color 0.5s;
+}
+
+.bronze {
+  color: #cd7f32;
+  font-size: 24px;
+}
+
+.silver {
+  color: #c0c0c0;
+  font-size: 28px;
+}
+
+.gold {
+  color: #ffd700;
+  font-size: 32px;
+}
