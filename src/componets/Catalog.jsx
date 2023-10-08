@@ -95,9 +95,7 @@ const Catalog = () => {
           <div className="catalog-items">
             {catalogItems.map((item) => (
               <div key={item.id} className="catalog-item">
-                <p>
-                  English: {item.english} <br></br>Spanish: {item.spanish}
-                </p>
+                <p>English: {item.english}</p>
                 <div className="image-container">
                   <img
                     src={item.image}
@@ -105,6 +103,7 @@ const Catalog = () => {
                     className="catalog-image"
                   />
                 </div>
+                <p>Spanish: {item.spanish}</p>
                 <button onClick={() => handleDeleteCatalogItem(item.id)}>
                   Delete
                 </button>
