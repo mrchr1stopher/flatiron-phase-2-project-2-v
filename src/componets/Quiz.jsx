@@ -67,40 +67,50 @@ const Quiz = () => {
 
   return (
     <div>
-      <h1>English to Spanish Quiz</h1>
-      <div>
-        <p>Translate the English word to Spanish:</p>
-        <p>Score: {score}</p>
-        <ComboCounter comboCount={comboCount} />
-        <Health hearts={hearts} />
-        {word && (
-          <div className="image-container">
-            <img
-              src={word.image}
-              alt={word.english}
-              className="catalog-image"
-            />
+      <h1>Translate the word to Spanish</h1>
+      <div className="quiz-top">
+        <p>Answer 10 questions correctly</p>
+        <p>¿Puedes lograr un PERFECTO?</p>
+      </div>
+
+      <div className="quiz-container">
+        <div>
+          <div className="quiz-extras">
+            <p>
+              Score: {score}
+              <Health hearts={hearts} />
+            </p>
           </div>
-        )}
-        {word && <p>{word.english}</p>}
-        <input
-          type="text"
-          placeholder="Your answer"
-          value={userAnswer}
-          onChange={(e) => setUserAnswer(e.target.value)}
-          onKeyPress={handleInputKeyPress}
-          disabled={quizCompleted}
-        />
-        <button onClick={checkAnswer} disabled={quizCompleted}>
-          Check Answer
-        </button>
-        <SpanishCharacters />
-        {showAnswer && <p>Correct Answer: {word.spanish}</p>}
-        {showAnswer && !quizCompleted && (
-          <div>
-            <button onClick={getNextWord}>Next Word</button>
-          </div>
-        )}
+          {word && (
+            <div className="image-container">
+              <img
+                src={word.image}
+                alt={word.english}
+                className="catalog-image"
+              />
+              <ComboCounter comboCount={comboCount} />
+            </div>
+          )}
+          {word && <p>{word.english}</p>}
+          <input
+            type="text"
+            placeholder="Your answer"
+            value={userAnswer}
+            onChange={(e) => setUserAnswer(e.target.value)}
+            onKeyPress={handleInputKeyPress}
+            disabled={quizCompleted}
+          />
+          <button onClick={checkAnswer} disabled={quizCompleted}>
+            Check Answer
+          </button>
+          <SpanishCharacters />
+          {showAnswer && <p>Correct Answer: {word.spanish}</p>}
+          {showAnswer && !quizCompleted && (
+            <div>
+              <button onClick={getNextWord}>Next Word</button>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

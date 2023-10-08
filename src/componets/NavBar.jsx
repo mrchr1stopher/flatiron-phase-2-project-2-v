@@ -46,7 +46,7 @@ function NavBar() {
           color: "gold",
         }}
       >
-        Add a word
+        Add
       </NavLink>
     </div>
   );
