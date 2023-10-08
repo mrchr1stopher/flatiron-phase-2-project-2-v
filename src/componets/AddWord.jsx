@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import SpanishCharacters from "./SpanishCharacters";
+import "./AddWord.css";
+
 const AddWord = () => {
   const [newWord, setNewWord] = useState({
     english: "",
@@ -41,9 +43,10 @@ const AddWord = () => {
   };
 
   return (
-    <div>
-      <h1>New Word</h1>
-      <p>Please Ensure you fill out all forms</p>
+    <div className="formContainer">
+      <h1>Add a new word</h1>
+      <p>Please ensure you fill out all forms</p>
+
       <form>
         <div>
           <label htmlFor="category">Category:</label>
@@ -60,7 +63,6 @@ const AddWord = () => {
             <option value="Miscellaneous">Miscellaneous</option>
           </select>
         </div>
-        <br></br>
         <div>
           <label htmlFor="english">English:</label>
           <input
@@ -71,7 +73,6 @@ const AddWord = () => {
             onChange={handleInputChange}
           />
         </div>
-        <br></br>
         <div>
           <label htmlFor="spanish">Spanish:</label>
           <input
@@ -82,7 +83,6 @@ const AddWord = () => {
             onChange={handleInputChange}
           />
         </div>
-        <br></br>
         <div>
           <label htmlFor="image">Image URL:</label>
           <input
@@ -93,7 +93,6 @@ const AddWord = () => {
             onChange={handleInputChange}
           />
         </div>
-        <br></br>
         <button type="button" onClick={handleAddWord}>
           Add Word
         </button>

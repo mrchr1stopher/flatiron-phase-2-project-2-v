@@ -80,6 +80,7 @@ const Quiz = () => {
               Score: {score}
               <Health hearts={hearts} />
             </p>
+            <ComboCounter comboCount={comboCount} />
           </div>
           {word && (
             <div className="image-container">
@@ -88,7 +89,6 @@ const Quiz = () => {
                 alt={word.english}
                 className="catalog-image"
               />
-              <ComboCounter comboCount={comboCount} />
             </div>
           )}
           {word && <p>{word.english}</p>}

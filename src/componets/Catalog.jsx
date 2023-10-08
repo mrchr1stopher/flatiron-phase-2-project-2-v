@@ -41,8 +41,7 @@ const Catalog = () => {
     fetchCatalogItems();
   }, [catalogIndex, selectedCategory]);
 
-  //next buton
-
+  //Next Button
   const handleNextCatalogItems = () => {
     if (catalogIndex + 10 <= maxIndex) {
       setCatalogIndex((prevIndex) => prevIndex + 10);
@@ -78,18 +77,20 @@ const Catalog = () => {
   return (
     <div>
       <h1>Catalog</h1>
-      <label htmlFor="category">Filter by Category: </label>
-      <select
-        id="category"
-        value={selectedCategory}
-        onChange={(e) => setSelectedCategory(e.target.value)}
-      >
-        <option value="All">All</option>
-        <option value="Animals">Animals</option>
-        <option value="Clothing">Clothing</option>
-        <option value="Food">Food</option>
-        <option value="Miscellaneous">Miscellaneous</option>
-      </select>
+      <div className="filterBar">
+        <label htmlFor="category">Filter by Category: </label>
+        <select
+          id="category"
+          value={selectedCategory}
+          onChange={(e) => setSelectedCategory(e.target.value)}
+        >
+          <option value="All">All</option>
+          <option value="Animals">Animals</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Food">Food</option>
+          <option value="Miscellaneous">Miscellaneous</option>
+        </select>
+      </div>
       <div className="catalog-container">
         {catalogItems.length > 0 && (
           <div className="catalog-items">
