@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ComboCounter from "./ComboCounter";
 import SpanishCharacters from "./SpanishCharacters";
+import Health from "./Health";
 
 const Quiz = () => {
   const [word, setWord] = useState();
@@ -9,6 +10,7 @@ const Quiz = () => {
   const [score, setScore] = useState(0);
   const [comboCount, setComboCount] = useState(0);
   const [quizCompleted, setQuizCompleted] = useState(false);
+  const [hearts, setHearts] = useState(3);
 
   const fetchRandomWord = async () => {
     try {
@@ -38,6 +40,12 @@ const Quiz = () => {
       setComboCount((prevComboCount) => prevComboCount + 1);
     } else {
       setComboCount(0);
+
+      setHearts((prevHearts) => prevHearts - 1);
+
+      if (hearts <= 1) {
+        setQuizCompleted(true);
+      }
     }
 
     if (score >= 9) {
@@ -64,6 +72,7 @@ const Quiz = () => {
         <p>Translate the English word to Spanish:</p>
         <p>Score: {score}</p>
         <ComboCounter comboCount={comboCount} />
+        <Health hearts={hearts} />
         {word && (
           <div className="image-container">
             <img
