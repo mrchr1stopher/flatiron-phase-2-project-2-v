@@ -65,6 +65,14 @@ const Quiz = () => {
     fetchRandomWord();
   };
 
+  const handleRestart = () => {
+    fetchRandomWord();
+    setScore(0);
+    setComboCount(0);
+    setHearts(3);
+    setQuizCompleted(false);
+  };
+
   return (
     <div>
       <h1>Translate the word to Spanish</h1>
@@ -72,10 +80,10 @@ const Quiz = () => {
         <p>Answer 10 questions correctly</p>
         <p>¿Puedes lograr un PERFECTO?</p>
       </div>
-
       <div className="quiz-container">
         <div>
           <div className="quiz-extras">
+            <button onClick={handleRestart}>Restart</button>
             <p>
               Score: {score}
               <Health hearts={hearts} />
