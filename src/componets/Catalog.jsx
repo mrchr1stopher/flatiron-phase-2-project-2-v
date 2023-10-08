@@ -41,6 +41,8 @@ const Catalog = () => {
     fetchCatalogItems();
   }, [catalogIndex, selectedCategory]);
 
+  //next buton
+
   const handleNextCatalogItems = () => {
     if (catalogIndex + 10 <= maxIndex) {
       setCatalogIndex((prevIndex) => prevIndex + 10);

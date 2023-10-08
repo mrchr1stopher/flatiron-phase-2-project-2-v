@@ -41,7 +41,7 @@ const Quiz = () => {
   };
 
   const handleInputKeyPress = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" && !showAnswer) {
       checkAnswer();
     }
   };
