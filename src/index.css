@@ -1,6 +1,15 @@
 body {
   background-color: rgb(17, 17, 17);
   color: white;
+  border: 5px solid gray;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
 }
 
 .centered-app {
@@ -18,8 +27,6 @@ body {
   font-size: 20px;
 }
 
-/* catalog image */
-
 .image-container {
   width: 250px;
   height: 200px;
@@ -34,4 +41,10 @@ body {
   height: 100%;
   object-fit: cover;
   font-size: 20px;
+}
+
+.combocountertext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

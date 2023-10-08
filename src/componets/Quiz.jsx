@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ComboCounter from "./ComboCounter";
-import SpecialCharacters from "./SpanishCharacters";
+import SpanishCharacters from "./SpanishCharacters";
 
 const Quiz = () => {
   const [word, setWord] = useState();
@@ -58,9 +58,7 @@ const Quiz = () => {
       <div>
         <p>Translate the English word to Spanish:</p>
         <p>Score: {score}</p>
-
         <ComboCounter comboCount={comboCount} />
-
         {word && (
           <div className="image-container">
             <img
@@ -71,7 +69,6 @@ const Quiz = () => {
           </div>
         )}
         {word && <p>{word.english}</p>}
-
         <input
           type="text"
           placeholder="Your answer"
@@ -80,7 +77,7 @@ const Quiz = () => {
           onKeyPress={handleInputKeyPress}
         />
         <button onClick={checkAnswer}>Check Answer</button>
-        <SpecialCharacters />
+        <SpanishCharacters />
         {showAnswer && <p>Correct Answer: {word.spanish}</p>}
         {showAnswer && (
           <div>
