@@ -8,6 +8,7 @@ const Quiz = () => {
   const [showAnswer, setShowAnswer] = useState(false);
   const [score, setScore] = useState(0);
   const [comboCount, setComboCount] = useState(0);
+  const [quizCompleted, setQuizCompleted] = useState(false);
 
   const fetchRandomWord = async () => {
     try {
@@ -37,6 +38,10 @@ const Quiz = () => {
       setComboCount((prevComboCount) => prevComboCount + 1);
     } else {
       setComboCount(0);
+    }
+
+    if (score >= 9) {
+      setQuizCompleted(true);
     }
   };
 
@@ -75,11 +80,14 @@ const Quiz = () => {
           value={userAnswer}
           onChange={(e) => setUserAnswer(e.target.value)}
           onKeyPress={handleInputKeyPress}
+          disabled={quizCompleted}
         />
-        <button onClick={checkAnswer}>Check Answer</button>
+        <button onClick={checkAnswer} disabled={quizCompleted}>
+          Check Answer
+        </button>
         <SpanishCharacters />
         {showAnswer && <p>Correct Answer: {word.spanish}</p>}
-        {showAnswer && (
+        {showAnswer && !quizCompleted && (
           <div>
             <button onClick={getNextWord}>Next Word</button>
           </div>
